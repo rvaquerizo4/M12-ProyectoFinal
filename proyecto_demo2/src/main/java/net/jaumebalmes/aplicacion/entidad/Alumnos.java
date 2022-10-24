@@ -9,6 +9,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Alumnos { //Plain Old Java Object (POJO)
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
