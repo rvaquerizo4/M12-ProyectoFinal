@@ -1,9 +1,11 @@
 package net.jaumebalmes.aplicacion.entidad;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Ciclo {//Plain Old Java Object (POJO)
 
 	@Id
@@ -24,7 +26,8 @@ public class Ciclo {//Plain Old Java Object (POJO)
 		this.grupo = grupo;
 		this.aula = aula;
 	}
-
+	
+	//Setters y Getters
 	public long getId() {
 		return id;
 	}
