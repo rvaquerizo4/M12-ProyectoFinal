@@ -7,26 +7,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.jaumebalmes.aplicacion.entidad.Alumnos;
-import net.jaumebalmes.aplicacion.repositoris.AlumnosRepository;
+import net.jaumebalmes.aplicacion.entidad.hEntradahSalida;
+import net.jaumebalmes.aplicacion.repositoris.HorasRepository;
 
 @RestController
 @RequestMapping("api")
-public class AlumnosController {
+public class HorasControllers {
 	
 	@Autowired     //diu a Spring que crei ell l'objecte
-	AlumnosRepository alumnoRep; //no cal fer new ja que ho fa Spring
+	HorasRepository horaRep; //no cal fer new ja que ho fa Spring
 	
-	@GetMapping("alumnos/{id}")
-	public Alumnos getAlumnos(@PathVariable long id) {
-		Alumnos alumno = alumnoRep.findById(id).get();
+	@GetMapping("horas/{id}")
+	public hEntradahSalida getHEntradahSalida(@PathVariable long id) {
+		hEntradahSalida hora = horaRep.findById(id).get();
 
-		return alumno;
+		return hora;
 	}
 	//Metodo para eliminar por Id
-	  @DeleteMapping("alumnos/delete/{id}")
+	  @DeleteMapping("horas/delete/{id}")
 	  public void delete(@PathVariable Long id) {
-		alumnoRep.deleteById(id);
+		horaRep.deleteById(id);
 	  }
 }
-
