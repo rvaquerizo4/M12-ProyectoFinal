@@ -28,5 +28,6 @@ public class AlumnosController {
 	  public void delete(@PathVariable Long id) {
 		alumnoRep.deleteById(id);
 	  }
+	  
 }
 
